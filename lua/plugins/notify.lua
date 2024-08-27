@@ -34,21 +34,22 @@ return {
 			background_colour = "#000000",
 		})
 
+		vim.keymap.set('n', '<leader>n', '<nop>', { desc = "notify" })
 		vim.keymap.set("n", "<leader>nl", function()
 			noice.cmd("last")
-		end, { desc = "Noice: show last message" })
+		end, { desc = "show last message" })
 
 		vim.keymap.set("n", "<leader>nh", function()
 			noice.cmd("history")
-		end, { desc = "Noice: show history" })
+		end, { desc = "show history" })
 
 		vim.keymap.set("n", "<leader>nt", function()
 			noice.cmd("telescope")
-		end, { desc = "Noice: Telescope" })
+		end, { desc = "Telescope" })
 
 		vim.keymap.set("n", "<leader>nd", function()
 			noice.cmd("dismiss")
-		end, { desc = "Noice: dismiss all messages" })
+		end, { desc = "dismiss all messages" })
 
 		require("telescope").load_extension("noice")
 	end,

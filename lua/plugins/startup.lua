@@ -2,10 +2,24 @@ return {
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
   config = function()
+	local logo = [[
+
+██████╗ ██╗  ██╗ ██████╗ ███████╗███╗   ██╗██╗██╗  ██╗
+██╔══██╗██║  ██║██╔═══██╗██╔════╝████╗  ██║██║╚██╗██╔╝
+██████╔╝███████║██║   ██║█████╗  ██╔██╗ ██║██║ ╚███╔╝ 
+██╔═══╝ ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║██║ ██╔██╗ 
+██║     ██║  ██║╚██████╔╝███████╗██║ ╚████║██║██╔╝ ██╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝
+                                                      
+
+	]]
+
+    logo = string.rep("\n", 8) .. logo .. "\n\n"
+
     require('dashboard').setup {
 		theme = 'hyper',
 		config = {
-			header = {"Phoenix"},
+			header = vim.split(logo, "\n"),
 		  -- week_header = {
 		  --  enable = false,
 		  -- },
@@ -37,4 +51,3 @@ return {
   end,
   dependencies = { {'nvim-tree/nvim-web-devicons'}}
 }
-

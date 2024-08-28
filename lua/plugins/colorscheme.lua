@@ -1,8 +1,9 @@
 return {
-	"bluz71/vim-nightfly-guicolors",
-	priority = 1000, -- make sure to load this before all the other plugings
-	config = function()
-		-- load the colorscheme here
-		vim.cmd([[colorscheme nightfly]])
-	end,
+    'folke/tokyonight.nvim',
+    config = function()
+		  vim.cmd[[colorscheme tokyonight]]
+        require('tokyonight').setup({
+            disable_background = true
+        })
+    end
 }

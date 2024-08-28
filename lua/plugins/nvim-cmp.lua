@@ -35,8 +35,8 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        ["<S-TAB>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<TAB>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<S-TAB>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
@@ -45,6 +45,7 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
+	   { name = 'async_path' },
         { name = "nvim_lsp"},
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer

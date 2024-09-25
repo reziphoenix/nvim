@@ -4,8 +4,6 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		"ray-x/lsp_signature.nvim",
-		{ "RaafatTurki/corn.nvim" },
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -66,13 +64,6 @@ return {
 			opts["desc"] = "Signature Help"
 			keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 
-			require("lsp_signature").on_attach({
-				bind = false, -- Set to false, I use this for the virtual-text only
-				noice = true, -- set to true if you using noice to render markdown
-				floating_window = false,
-			}, bufnr)
-
-			require("corn").setup()
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)

@@ -22,3 +22,6 @@ vim.g.clipboard = {
         ["*"] = "xclip -o -selection clipboard",
     },
 }
+
+vim.opt.undofile = true         -- Enables persistent undo
+vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"  -- Set a directory for undo files

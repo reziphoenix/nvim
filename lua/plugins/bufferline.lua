@@ -13,14 +13,24 @@ return {
             return "(" .. count .. ")"
           end,
           show_buffer_icons = true, -- Show filetype icons for buffers
-          indicator = {
-            style = "underline",
-          },
+		  separator_style = "slant", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
+            indicator = {
+                style = 'underline',
+						},
+		  offsets = {
+                {
+                    filetype = "NvimTree",
+                    text = "File Explorer" ,
+                    text_align = "center",
+                    separator = true,
+				}
+		            }
         },
       })
 
       -- Keymaps
 	local opts = { noremap = true, silent = true }
+	vim.keymap.set('n', '<leader>b', '<nop>', { desc = "Buffer" })
 	vim.keymap.set("n", "<leader>bj", "<cmd>BufferLinePick<cr>", opts) -- Jump to a buffer
 	vim.keymap.set("n", "<leader>bf", "<cmd>Telescope buffers previewer=false<cr>", opts) -- Find buffer
 	vim.keymap.set("n", "<leader>bb", "<cmd>BufferLineCyclePrev<cr>", opts) -- Previous buffer

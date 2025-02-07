@@ -31,7 +31,7 @@ return {
 
     -- Set keymaps
     local keymap = vim.keymap -- for conciseness
-    keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- Toggle file explorer
+    keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Explorer" }) -- Toggle file explorer
 
     -- Open files in a new tab when selected from NvimTree
     keymap.set("n", "<CR>", ":lua require('nvim-tree').on_keypress('edit')<CR>:tabedit %<CR>", { noremap = true, silent = true })

@@ -1,4 +1,4 @@
 #!/bin/bash
 
 mkdir -p $HOME/.config/
-ln -s $HOME/dotfiles/neovim $HOME/.config/nvim
+ln -s $HOME/workspace/vim_repos/personal/nvim/ $HOME/.config/nvim
